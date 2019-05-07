@@ -1,6 +1,8 @@
 <div id="search-container">
   <div class="offset-container"></div>
-
+    <%= link_to(admin_path, method: :get, id: "main-app-link", class: "search-button", title: I18n.t("sail.go_back")) do %>
+      <%= image_tag("sail/link.svg", alt: I18n.t("sail.go_back)) %>
+    <% end %>
   <div class="inner-container">
     <%= form_tag(settings_path, method: :get, id: "search-form") do %>
       <input type="text" name="query" id="query"
