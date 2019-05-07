@@ -7,7 +7,6 @@ setTimeout(function () {
 
 if ("<%= @successful_update %>" === "true") {
     var input = document.getElementById("<%= "input_for_#{@setting.name}" %>");
-
     if ("<%= @setting.boolean? %>" === "true") {
         input.checked = "<%= @setting.value %>" === "true";
     } else {
