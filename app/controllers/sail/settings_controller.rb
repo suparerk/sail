@@ -82,8 +82,12 @@ module Sail
       message = +"#{DateTime.now.utc.strftime("%Y/%m/%d %H:%M")} [Sail] #{action_name.capitalize} setting='#{@setting.name}' " \
                  "value='#{@setting.value}'"
 
-      message << " author_user_id=#{current_user.id}" if defined?(current_user)
+      message << " author_user=#{author_user_id}"
       Rails.logger.info(message)
+    end
+
+    def author_user_id
+      current_admin_user.id if current_admin_user.present?
     end
   end
 end
